@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 ความในใจ</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+/* --- BODY --- */
+body {
+  background-color: #fff8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- ปุ่มย้อนกลับ --- */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+/* --- ซอง container --- */
+.envelope-container {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+/* --- ตัวซอง --- */
+.envelope-body {
+  width: 100%;
+  height: 100%;
+  background: #ffdde1;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* --- flap เป็นสามเหลี่ยม --- */
+.envelope-flap {
+  width: 0;
+  height: 0;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  border-bottom: 70px solid #ffb6b9;
+  position: absolute;
+  top: -70px;
+  left: 0;
+  transform-origin: top center;
+  transition: transform 0.6s ease-in-out;
+  z-index: 5;
+}
+
+/* flap เปิด */
+.envelope-container.open .envelope-flap {
+  transform: rotateX(-180deg);
+}
+
+/* --- กระดาษ --- */
+.letter {
+  position: absolute;
+  bottom: 0;
+  width: 220px;
+  min-height: 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(0) scale(0.8);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  overflow: hidden;
+}
+
+/* กระดาษเปิดออก */
+.envelope-container.open .letter {
+  transform: translateY(-140px) scale(1.3);
+  opacity: 1;
+}
+
+/* --- responsive สำหรับมือถือ --- */
+@media (max-width: 576px) {
+  .envelope-container {
+    width: 180px;
+    height: 130px;
+  }
+  .envelope-flap {
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
+    border-bottom: 50px solid #ffb6b9;
+    top: -50px;
+  }
+  .letter {
+    width: 150px;
+    min-height: 200px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    transform: translateY(0) scale(0.8);
+  }
+  .envelope-container.open .letter {
+    transform: translateY(-100px) scale(1.2);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ปุ่มย้อนกลับ -->
+<a href="main.html" class="btn btn-outline-primary back-btn">⬅ กลับ</a>
+
+<!-- ซอง + กระดาษ -->
+<div class="envelope-container" id="envelopeContainer">
+  <div class="envelope-body">
+    <span style="font-size: 2rem; margin-top: 20px;">📩</span>
+  </div>
+  <!-- <div class="envelope-flap"></div> !-->
+  <div class="letter">
+    <h3>ความในใจ 💖</h3>
+    <p>
+      ถึง เจ้าหนูเด็กอ้วนของเค้า...<br>
+      ขอบคุณที่อยู่ด้วยกันมาตลอด 3 ปี<br>
+      ขอบคุณที่ไม่ปล่อยมือไปไหน<br>
+      ขอบคุณที่ให้อภัย และเลือกผู้ชายคนนี้<br>
+      ขอบคุณที่น่ารักเสมอมา<br>
+      ขอบคุณที่เป็นแฟนกันนะ<br>
+      รัก...จากหมาแก่<br>
+    </p>
+  </div>
+</div>
+
+<script>
+const container = document.getElementById('envelopeContainer');
+container.addEventListener('click', () => {
+  container.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>

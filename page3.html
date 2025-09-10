@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎵 เพลงของเรา</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #fff8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+    .music-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .music-card:hover {
+      transform: translateY(-5px);
+    }
+    .music-thumbnail {
+      border-radius: 15px;
+      width: 100%;
+    }
+    iframe {
+      border-radius: 15px;
+      width: 100%;
+      height: 315px;
+      margin-top: 10px;
+    }
+    .back-btn {
+      margin: 20px;
+    }
+    h1 {
+      color: #ff6f91;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ปุ่มย้อนกลับ -->
+  <a href="main.html" class="btn btn-outline-primary back-btn">⬅ กลับ</a>
+
+  <div class="container py-5 text-center">
+    <h1 class="mb-4">🎶 เพลงของเรา 🎶</h1>
+    <p class="mb-5">เพลงที่เราเปิดฟังช่วงเริ่มจีบกัน 💕</p>
+
+    <!-- การ์ดเพลง -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <div class="music-card">
+          <!-- ปกเพลง -->
+          <img src="images/music-cover.jpg" alt="Our Song" class="music-thumbnail mb-3">
+          <!-- Embed YouTube -->
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/D-aCb9xsqTE?" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+            </div>
+          <h4 class="mt-3">ชื่อเพลงที่เราชอบ</h4>
+          <p class="text-muted">ศิลปินของเรา</p>
+        </div>
+      </div>
+
+      <!-- เพิ่มเพลงอีกใบได้โดย copy block ข้างบน -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

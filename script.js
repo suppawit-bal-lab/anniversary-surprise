@@ -26,7 +26,7 @@ enterBtn.addEventListener("click", () => {
     document.querySelector(".safe-box").classList.add("safe-open");
 
     setTimeout(() => {
-      window.location.href = "page2.html"; // หน้าถัดไป
+      window.location.href = "main.html"; // หน้าถัดไป
     }, 1000);
   } else {
     display.textContent = "XXXX";
